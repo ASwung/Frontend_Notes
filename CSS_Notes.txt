@@ -1,0 +1,195 @@
+<!DOCTYPE html>    	声明为 html 5标准来写的    注：不需要在标签里最后加上 5 
+<html lang="en">       说明这是 html 页面 lang="en" 代表 language 翻译成英文 
+<head>	    		<head>标签里的 是这个html 文件的配置、选项、样式、特效、标题等等，不是用来做显示的    
+<meta charset="utf-8">      unicode 编码格式 
+
+网页文档的三要素: 
+<title>我的页面</title>					    这个网站的标题 
+<meta name="Keywords" content="关键词">			    使做出来的网站能通过输入的关键字被搜索引擎给搜索到 
+<meta name="Description" content="网站的概要">      	    这是对这个网站的描述、对网页大概的介绍，但不是写在网页里的 
+
+<meta name="Author" content="Aswung">      		    作者，表示是谁写的这个网站 
+</head>
+
+
+背景：
+	单样式
+		background-color	背景颜色
+		background-image	背景图片
+		background-repeat	背景平铺
+		repeat		平铺（默认）
+		no-repeat	不平铺
+		repeat-x	X轴（水平）平铺
+		repeat-y	y轴（垂直）平铺
+		background-position 背景位置：
+				默认第一个值是X轴方向的值，第二个Y轴方向值
+				有方位词(九宫格)：	
+					X轴
+					left(左) center(中) right(右)
+					Y轴
+					top(上)	 center(左) bottom(下)
+					X,Y轴没有书写先后问题
+								
+					%   百分比(与盒子大小的百分比 100%不会出盒子)
+					px	像素值(以盒子原点(默认点)向X轴或Y轴的像素 设置与盒子一样的宽或高会出盒子)
+		background-size 背景大小(控制background-image的，须有background-image才有效果)
+				关键词：
+				contain 等比例缩放X轴或Y轴直到铺满其中一个方向	(铺满一个方向)
+				cover	等比例缩放直到铺满X轴和Y轴  (铺满全部)
+				px 第一个值X轴，第二是Y轴的，表示背景图片的大小
+				% 表示背景图片大小与盒子的大小比例
+
+	复合样式：color image repeat position/size;	(由于可以任意调换位置，所以如果有两个样式的数值混在一起需用 / 符隔开  最好使用此样式顺序)	
+				注：(px 取正值 图片会向下方或右方移动   px 取负值 图片会向上方或左方移动)
+
+	background-color:rgba(): 	 设置背景颜色，rgba()代表 三原色与不透明度的值，最后一个参数表示的是 α 通道（CSS 3），不透明度，取值范围 0 到 1，0 代表透明，1代表不透明也可以不用 		α 通道，直接输入颜色的英文(gray/grey(灰色)、pink(粉色)等等)，，也可以输入 #000000 到 #FFFFFF 之前的任意值，，也可以不使用 α 通道 直接使用三原色 rgb(),把三原色的值分别以十进制输入		在括号里
+	 	
+	background-image:url():	 	 给这个 <body> 设置背景图片，url()，括号里是图片的地址，本地图片本地目录下直接选取（相对路径），非本地目录需要其路径(可能需要复制到本地目录下)，网络		 图片直接粘贴图片地址即可  
+	 
+ 	background-repeat:	         设置它重复不重复，不重复(background-repeat: no-repeat),		X轴或Y轴方向重复(background-repeat: repeat-x/y)
+ 	 
+ 	background-attachment:      设置附加样式 背景是否固定/继承/本地/滚动(background-attachment: fixed/inherit/local/scroll),默认的是 scroll
+ 	 
+ 	background-position:	 
+	设置它的位置靠下/中/左/右/上(background-position: bottom/center/left/right/top)  或者  左下/左上/右下/右上(background-position: bottom left/top left/bottom right/top right) 
+	    也可以指出具体位置，长100像素宽100像素的位置(background-position: 100px 100px)
+
+	<body style="background:rgba(215,122,30,0.5) url('images/Aswung.gif') no-repeat scroll center top">
+     	必须要按照这样的顺序来设置参数(color、image、repeat、attachment、position)，background 后不加任何属性，每个属性的参数需用空格隔开
+
+边框：
+border：宽度  类型  颜色(小数不支持)
+
+	border-width:边框的宽度  thin  细的
+				 medium  默认的
+			         thick   粗的
+				不常用
+		数值 px
+   	border-style:none  没有边框 = hidden (用于表格除外，用来解决表格边框的冲突)
+
+		     solid   实线型
+
+		     dotted  点状 （有兼容问题 IE 浏览器显示为“圆点” chrome 浏览器显示为“正方形” 但边框宽度较小也没事）
+
+		     dashed  虚线 （有兼容问题）
+
+		     double  双线
+		
+	 border-color:十六进制  #fff  transparent　透明
+	　
+	 border: 1px solid #000;
+
+	 border-top: 1px solid #000;上边框
+	       border-top-width
+	       border-top-style
+	       border-top-color
+	 border-right:
+
+	 border-bottom:
+	
+	 border-left:
+
+	border复合样式
+				border:width style color;	四边都有
+				border-top:10px solid red;	顶部边框
+				border-right:10px solid red; 	右边边框
+				border-bottom:10px solid red;	底部边框
+				border-left:10px solid red;  	左部边框
+				none 无	
+				border:none 	无边框
+
+	border单样式写法：
+				border-width:30px;		边框大小
+				border-style:solid;		边框类型
+				border-color:green;		边框颜色
+
+				border-top-width		顶部边框大小
+				border-top-style		顶部边框类型
+				border-top-color		顶部边框颜色
+
+	
+outline： 轮廊 属性值与border一样
+
+外边距：
+margin：外边距单位：px em im mm %(相对于其父元素的宽高度) 
+	 单独设置边距：
+	margin-top  上
+	margin-left  左
+	margin-right  右
+	margin-bottom  下
+
+	 统一设置：
+	 margin:10px;		 上下左右都为 10px
+	 margin:10px 20px;        上下为10px   左右为20px  
+	 margin:10px 20px 30px;		 上为10px   左右为20px   下为30px
+	 margin:10px 20px 30px 40px;	上 右 下 左 顺时针方向	
+	 margin:auto;     左右(水平)居中
+
+
+
+注意：浏览器对一些标签有一个默认的外边距  内边距 body p
+
+
+内边距：
+padding:
+			复合样式；
+				padding：
+				四个值：上  右  下  左（顺时针）
+				三个值：上 左右  下
+				两个值：上下 左右
+				一个值：四个方向都一样大小
+			单样式：
+				padding-top		顶部内边距
+				padding-right		右部内边距
+				padding-bottom		底部内边距
+				padding-left		左部内边距
+		
+		margin/padding 内/外边距：
+			复合样式：
+				四个值：上  右  下  左（顺时针）
+				三个值：上 左右  下
+				两个值：上下 左右
+				一个值：四个方向都一样大小
+
+		影响盒子大小(计算方法)  =  内容（样式宽高）+ padding + border      padding可以把盒子撑大
+
+
+
+      在PC端谷歌浏览器支持的最小字体是 12px
+
+
+
+
+	 position:relative; 相对定位：参考物(父元素)，相对于自己本身的位置定位
+	 position:absolute; 绝对定位：相对于拥有定位属性(relative/absolute/fixed)的最近的父元素定位(如果说所有的父元素都没定位属性，就相对与浏览器窗口定位)
+	 position:fixed; 相对于浏览器来定位
+
+	 overflow:hidden;	超出 隐藏
+	 float:left;   左浮动
+	 text-align:center;  文本左右对齐方式：居中显示 
+
+
+块级元素 行内元素 行内块级：
+块级元素：能够设置宽高，占满一行显示
+行内元素：不能设置宽高，在一行之内显示(如需设置宽高，占满一行显示，需加上：display：block 或者 float：left)
+  区别：块级元素有默认的样式(display：block)  行内元素没有这一默认的样式
+
+
+
+document.write(" "): 在网页上书写 " " 中的内容
+
+<button type="button">点击这里</button>： 生成“点击这里”的按钮  
+	 （注：<button type="（button）、（reset）、（submit）"> button有三种类型，分别为：button、reset、submit）
+
+<button type="button" onClick="alert('点击后')">点击这里</button> ：   onclick = " " 代表当点击时执行 " "里的操作     alert(' ')表示弹出一个窗口，当外面有双引号时，里面为单引号，显示单引号里的内容
+
+
+
+
+
+
+
+
+
+
+			

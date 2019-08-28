@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>First Page</title>
+<style>   
+		/* div{
+			width:1000px;
+			height:1000px;
+			background-color:rgba(95%,50%,15%,0.5);	
+			background-image:url('images/Aswung.jpg'); 
+			background-repeat:no-repeat;  
+			background-attachment:scroll;  
+			background-position:center top;
+			background-size:50% 50%;
+		} */
+		div{
+			width:1000px;
+			height:1000px;
+			background:rgba(215,122,30,0.5) url('images/Aswung.gif') no-repeat scroll center top/50% 50%;
+		}
+ /*  必须要按照这样的顺序来设置参数(color、image、repeat、attachment、position、size)，background 后不加任何属性，每个属性的		参数需用空格隔开注：background-size 属性在复合样式设置参数时，需在参数前加上 / 符，以免参数混淆  */
+		
+/******************************************************************************************************************************
+			背景：
+			单样式
+				background-color	背景颜色  #f0d(缩写形式，每个字母是两个重复的 #ff00dd) （默认为透明）
+				background-image	背景图片  url('')
+				background-repeat	背景平铺
+					repeat		平铺（默认）
+					no-repeat	不平铺
+					repeat-x	X轴（水平）平铺
+					repeat-y	y轴（垂直）平铺
+				background-attachment	背景图像是否固定或者随着页面的其余部分滚动。 
+				background-position	    背景位置：
+					默认第一个值是X轴方向的值，第二个Y轴方向值
+					有方位词(九宫格)：	
+								X轴
+									left(左) center(中) right(右)
+								Y轴
+									top(上)	 center(左) bottom(下)
+								X,Y轴没有书写先后问题
+								
+					%   百分比(与盒子大小的百分比 100%不会出盒子)
+					px	像素值(以盒子原点(默认点)向X轴或Y轴的像素 设置与盒子一样的宽或高会出盒子)
+				background-size 背景大小(控制background-image的，须有background-image才有效果)
+					关键词：
+						contain 等比例缩放X轴或Y轴直到铺满其中一个方向	(铺满一个方向)
+						cover	等比例缩放直到铺满X轴和Y轴(铺满全部)
+						px 第一个值X轴，第二是Y轴的，表示背景图片的大小
+						% 表示背景图片大小与盒子的大小比例
+
+			复合样式：color image repeat position/size;	(由于可以任意调换位置，所以如果有两个样式的数值混在一起需用 / 符隔开  最好使用此样式顺序)	
+-->
+
+<!-- style="background-color"、"background-image"、"background-repeat"、"background-attachment"、background-position": -------------------------------------------------->   
+<body style="background-color:rgba(215,122,30,0.5);	 background-image:url('images/Aswung.jpg');  background-repeat:no-repeat;  background-attachment:scroll;  background-position:center top" >
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+	background-color:rgba(): 	 设置背景颜色，rgba()代表 三原色与不透明度的值，最后一个参数表示的是 α 通道（CSS 3），不透明度，取值范围 0 到 1，0 代表透明，1代表不透明
+ 	也可以不用 α 通道，直接输入颜色的英文(gray/grey(灰色)、pink(粉色)等等)，，也可以输入 #000000 到 #FFFFFF 之前的任意值，，也可以不使用 α 通道 直接使用三原色 rgb(),把三原色的值分别以十进制输入在括号里(用百分比值也行)
+ 	
+	 background-image:url():	 给这个 <body> 设置背景图片，url()，括号里是图片的地址，本地图片本地目录下直接选取（相对路径），非本地目录需要其路径(可能需要复制到本地目录下)，网络图片直接粘贴图片地址即可  
+	 
+ 	 background-repeat:	         设置它重复不重复，不重复(background-repeat: no-repeat),		X轴或Y轴方向重复(background-repeat: repeat-x/y)
+ 	 
+ 	 background-attachment:      设置附加样式 背景是否固定/继承/本地/滚动(background-attachment: fixed/inherit/local/scroll),默认的是 scroll
+ 	 
+ 	 background-position:	 
+	 设置它的位置靠下/中/左/右/上(background-position: bottom/center/left/right/top)  或者  左下/左上/右下/右上(background-position: bottom left/top left/bottom right/top right) 
+	     也可以指出具体位置，长100像素宽100像素的位置(background-position: 100px 100px)  给百分比值也行，根据父元素的百分比大小
+
+	 background-size:
+	  设置背景图片的位置(需在有 background-image 时使用) 
+					值：contain 等比例缩放X轴或Y轴直到铺满其中一个方向	(铺满一个方向)
+						cover	等比例缩放直到铺满X轴和Y轴(铺满全部)
+						px		第一个值X轴，第二是Y轴的，表示背景图片的大小
+						%		表示背景图片大小与盒子的大小比例
+	     
+					样式里的每个属性都要被包裹在一个引号里，用分号隔开 
+	 复合样式："background-color"、"background-image"、"background-repeat"、"background-attachment"、background-position"、"background-size”		 设置的排列顺序:   
+*****************************************************************************************************************************/
+		
+
+			p{
+				text-indent:2em;	/* 表示<p>里的文本被缩进了 2 格  */
+				font-family:monospace;
+				font-style:obiqu;
+			}
+/******************************************************************************************************************************
+		文本：
+		相对值单位：	 
+			 em 单位代表当前字体的倍数，也就是 1个当前字体的宽度 = 1em  
+			 %  给出百分比值，代表相对于父级元素的百分比
+		绝对值单位：
+			 in 英寸(inch) 
+			 cm 
+			 mm
+			 px
+			 pt 磅  1in = 72pt
+	文本样式：
+			 text-indent：			文本缩进
+			 line-height			行高(占据的整体高度，文字会纵向居中)
+			 word-spacing:			字间距(对英文有用)
+			 letter-spacing:		字符间距(汉字属于字符)
+			 text-align:			文本对齐		值：left/center/right/justify(两端对齐)
+			 text-transform:		文本变形		值: unppercase(大写)/lowercase(小写)/capitalize(首字母大写)
+			 text-decoration:		文本装饰(<a>的下划线等等)	值：none/underline(下划线)/overline(上划线)/line-theough(删除														   线)/blink(闪烁 有些浏览器不支持)
+			 white-space:			空格样式		值：normal/pre-wrap(格式化且卷绕)/pre(格式化)/nowrap(不卷绕)/pre-line(合											   并空白 保留换行)
+			 direction：			文本方向		值：rtl(从右至左)/ltr(从左至右 默认)
+			 color:					文本颜色		值：颜色值(#******、单词、rgb()、rgba())
+	字体样式：
+			 font-family:	字体系列	值(五大类):	serif(矢量的,大多数英文都是这个,字体有粗细 等比例缩放 竖线两端有小横线)
+												    sans-serif(竖线两端没有小横线 没有多余装饰的)
+													monospace(等宽的字体 用于写程序代码的、显示终端输出的)
+													cursive(看上去像手写的字体)
+													fantasy(无法归类的 不是字 都是符号)
+										值(具体字体):"hei"(黑体)可写多个，用于备用
+			 font-style:	字体样式	值：normal/italic/obique
+			 font-variant:	字体变化	值：small-caps(小的大写字体)
+			 font-weight:	字体粗细	值：数值(100~900)/bold
+			 font-size:		字体大小	值：数值 建议使用以 em 单位的数值
+			 text-shadow:	字体阴影	值(需给四个值)：X轴值(px) Y轴值(px) 阴影扩散值(px) 颜色值   （可以使用多个）
+			 outline-color: 轮廓颜色	值:	颜色值
+			 outline-style: 轮廓样式	值：solid(实线)/dotted(点线)/dashed(虚线)/double(双线)/groove(凹槽)/ridge(凸槽)/
+											inset(凹的边)/outset(凸的边)
+			 outline-width: 轮廓宽度	值：数值(px)/thin(细的)
+
+
+			 list-style:			列表样式(<li>的小圆点等等)			值：none
+			 overflow:				超出   值：hidden
+			 float:					浮动   值：left/right
+			 display:				显示   值：block/none	
+			 position:				位置   值：relative/absolute
+			 background:			背景
+			 margin:				外边距
+			 padding:				内边距
+			 width：				宽度
+			 height:				高度
+			 top:					上
+			 bottom:				下
+			 left:					左	
+			 right:					右
+			 box-shadow: 0 0 4px #fff;
+			 transition:all 1s;
+*****************************************************************************************************************************/
+		/* p {font-family: "sans serif";}  如果值为若干单词，则要给值加引号 */
+</style>
+
+</head>
+<body>
+	<div> <div>
+	<p>今天是2017年7月24日！！</p>
+</body>
+</html>
